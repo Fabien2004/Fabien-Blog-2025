@@ -1,0 +1,10 @@
+main {
+  width: 100%
+}
+.container {
+  width: 90%;            
+  padding-bottom: 4.5em;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}

@@ -1,0 +1,22 @@
+.posts {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .post {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post h2 {
+      margin-top: 0;
+    }
