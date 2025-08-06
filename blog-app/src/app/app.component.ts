@@ -6,13 +6,18 @@ import { HeaderComponent } from './core/header/header.component';
 import { MainComponent } from './main/main.component';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, FooterComponent, MainComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {}
+export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+}
 
 
 
