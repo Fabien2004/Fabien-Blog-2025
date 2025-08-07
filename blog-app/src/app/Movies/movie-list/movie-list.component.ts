@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { LoaderComponent } from '../../shared/loader/loader.component';
-import { Post } from '../../types/post';
 import { ApiService } from '../../api.service';
+import { Post } from '../../types/post';
+
 
 
 @Component({
-  selector: 'app-posts-list',
+  selector: 'app-movie-list',
   standalone: true,
-  imports: [LoaderComponent],
-  templateUrl: './posts-list.component.html',
-  styleUrl: './posts-list.component.css'
+  imports: [],
+  templateUrl: './movie-list.component.html',
+  styleUrl: './movie-list.component.css'
 })
-export class PostsListComponent implements OnInit{
+export class MoviesListComponent implements OnInit{
   posts: Post[] = [];
   isLoading = true;
   
