@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-new-movie',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './new-movie.component.css'
 })
 export class NewMovieComponent {
+  constructor(private apiService: ApiService){}
 
+  addMovie(){}
 }

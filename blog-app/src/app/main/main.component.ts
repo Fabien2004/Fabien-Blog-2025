@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-import { MoviesListComponent } from '../Movies/movie-list/movie-list.component';
+
+import { UserService } from '../user/user.service';
 
 
 
 @Component({
   selector: 'app-main',
-  imports: [MoviesListComponent], 
+  standalone: true,
+  imports: [],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  styleUrl: './main.component.css',
 })
 export class MainComponent {
+  get isLoggedIn(): boolean {
+    return this.userService.isLogged;
+  }
 
+  constructor(private userService: UserService) {}
 }

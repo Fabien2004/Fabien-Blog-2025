@@ -1,21 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Post } from './types/post';
+import { Movie } from './models/movie.model';
 import { environment } from '../enviroments/enviroments';
 
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  getPosts(limit?: number){
-    const { apiUrl } = environment;
-    let url = `${apiUrl}/posts`;
-    if(limit){
-      url +=`?limit=${limit}`;
-    }
-    return this.http.get<Post[]>(url)
+  getMovies() {
+   const { apiUrl } = environment;
+   return this.http.get<Movie[]>(`${apiUrl}/movies`);
   }
-}
+  getSingleMovie() {
+    const { apiUrl } = environment;
+   return this.http.get<Movie[]>(`${apiUrl}/movies`);
+   
+  }
+  createMovie(movieName: string, MovieDescription: string, MovieImage: string){
+    const { apiUrl } = environment;
+    const payload = {movieName, MovieDescription, MovieImage};
+   return this.http.get<Movie[]>(`${apiUrl}/movies`, payload);
+  }
+
+};

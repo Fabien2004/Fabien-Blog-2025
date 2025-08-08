@@ -1,27 +1,27 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+
 import { ApiService } from '../../api.service';
-import { Post } from '../../types/post';
+import { Movie } from '../../models/movie.model';
 
 
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-list',
+  selector: 'app-posts-list',
   standalone: true,
   imports: [],
   templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.css'
+  styleUrl: './movie-list.component.css',
 })
-export class MoviesListComponent implements OnInit{
-  posts: Post[] = [];
+export class MovieListComponent implements OnInit {
+  movies: Movie[] = [];
   isLoading = true;
-  
-  constructor(private apiService: ApiService){}
-   
+
+  constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
-    this.apiService.getPosts().subscribe((posts) =>{
-      this.posts = posts;
-       this.isLoading = false;     
+    this.apiService.getMovies().subscribe((movies: Movie[]) => {
+      this.movies = movies;
+      this.isLoading = false;
     });
   }
 }
